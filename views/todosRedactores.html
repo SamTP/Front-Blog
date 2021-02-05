@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Redactores</title>
+
+    <link rel="stylesheet" href="../css/bootstrap1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/usuarios.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="../index.html">Foro</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+        </div>
+    </nav>
+
+    <div class="row" style="margin-top: 1%;">
+        <div class="col-12">
+            <div class="card" style="width: 90%;margin-left: 5%;">
+                <div class="card-body">
+                    <h3 class="card-title">Redactores</h3>
+                    <table class="table" style="width: 80%;margin-left: 10%;">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre de Usuario</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="redactores">
+                        </tbody>
+                    </table>
+                    <div style="margin-left: 40%;margin-top:2%;">
+                        <ul class="pagination pagination-sm" id="pagesRedactores">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>navbar(); verRedactores(0);</script>
+</body>
+
+</html>

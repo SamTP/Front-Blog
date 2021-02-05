@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/bootstrap1.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/usuarios.js"></script>
+    <script type="text/javascript" src="../js/comentarios.js"></script>
+    <script type="text/javascript" src="../js/publicaciones.js"></script>
+    <script type="text/javascript" src="../js/admin.js"></script>
+
+    <title>Prueba 01</title>
+</head>
+
+<body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="../index.html">Foro</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+                <button class="btn btn-secondary my-2 my-sm-0" type="button">Buscar</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Fin del NavBar -->
+
+    <div class="container" style="margin-top:1%;">
+        <!-- Información de perfil -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body" id="perfil">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin Información de Perfil -->
+        <!--  Post -->
+        <div class="row" style="margin-top:1%" id="posts">
+            <div class="col-12">
+                <div class="card" style="width:100%;">
+                    <div class="card-body">
+                        <h4 class="card-title">Mis Post</h4> <br>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Título</th>
+                                    <th scope="col">Resumen</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="postsTabla">
+                            </tbody>
+                        </table>
+                        <div style="margin-left: 40%;margin-top:5%;">
+                            <ul class="pagination pagination-sm" id="pagesPost">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin  Post -->
+        <!-- Comentarios  -->
+        <div class="row" style="margin-top:1%" id="comments">
+            <div class="col-12">
+                <div class="card" style="width:100%;">
+                    <div class="card-body">
+                        <h4 class="card-title">Mis Comentarios</h4> <br>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Post</th>
+                                    <th scope="col">Comentario</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="commentsTabla">
+                            </tbody>
+                        </table>
+                        <div style="margin-left: 40%;margin-top:5%;">
+                            <ul class="pagination pagination-sm" id="pagesComments">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Comentarios  -->
+        <!-- Modal modificar Post -->
+        <div class="modal fade" id="modalPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Editar Publicación</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="cuerpoModal">
+                        <form class="form-group">
+                            <small>Título</small>
+                            <input type="text" class="form-control" id="titulo">
+                            <small>Resumen</small>
+                            <textarea type="text" class="form-control" id="resumen"></textarea>
+                            <small>Cuerpo</small>
+                            <textarea type="text" class="form-control" id="cuerpo"></textarea>
+                        </form>
+                    </div>
+                    <div class="modal-footer" id="footerModal">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin modal modificar post -->
+        <div class="row" style="margin-top:1%;margin-bottom:1%;">
+            <div class="col-5"></div>
+            <div class="col-3">
+                <button class="btn btn-danger" onclick="eliminarMiPerfil()">Eliminar cuenta</button>
+            </div>
+        </div>
+    </div>
+    <script>navbar(); verMiPerfil(); getMisPost(0); getComments(0)</script>
+</body>
+
+</html>
